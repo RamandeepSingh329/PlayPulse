@@ -439,6 +439,28 @@ Version: 1.0
     border-radius: 0;
 }
 /* Sidebar */
+
+/* Optional: Minimize sidebar on smaller screens (e.g., mobile) */
+@media (max-width: 767.98px) {
+    .sidebar {
+        width: 0 !important; /* Hide the sidebar */
+        overflow: hidden;
+    }
+    .sidebar-toggled #wrapper #content-wrapper .container-fluid {
+        padding-left: 15px; /* Adjust content padding */
+    }
+}
+
+/* Optional: Add a class to toggle sidebar minimization (e.g., .sidebar-mini) */
+.sidebar-mini .sidebar {
+    width: 0 !important;
+    overflow: hidden;
+}
+
+.sidebar-mini #wrapper #content-wrapper .container-fluid{
+    padding-left: 30px; /* Adjust content padding */
+}
+
  .channel-sidebar-list {
      border-top: 1px solid #ff516b;
      margin: 6px 0 0;
