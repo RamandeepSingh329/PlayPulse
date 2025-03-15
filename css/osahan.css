@@ -1210,17 +1210,6 @@ Version: 1.0
  .tags span a:hover {
      background: #000 none repeat scroll 0 0;
 }
-/* Footer */
- .app img {
-     background: #231f20 none repeat scroll 0 0;
-     border-radius: 3px;
-     height: 38px;
-     margin: 5px 0 0;
-     object-fit: scale-down;
-     padding: 3px 4px;
-}
-/* Mobile Media */
-/* Extra small devices (portrait phones, less than 576px) */
 .mobile-search {
     position: fixed;
     top: 0;
@@ -1263,6 +1252,18 @@ Version: 1.0
     cursor: pointer;
     margin-left: 10px;
 }
+
+/* Footer */
+ .app img {
+     background: #231f20 none repeat scroll 0 0;
+     border-radius: 3px;
+     height: 38px;
+     margin: 5px 0 0;
+     object-fit: scale-down;
+     padding: 3px 4px;
+}
+/* Mobile Media */
+/* Extra small devices (portrait phones, less than 576px) */
 
  @media (max-width: 575.98px) {
     .top-mobile-search {
