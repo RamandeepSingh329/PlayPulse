@@ -1210,7 +1210,6 @@ Version: 1.0
  .tags span a:hover {
      background: #000 none repeat scroll 0 0;
 }
-
 /* Footer */
  .app img {
      background: #231f20 none repeat scroll 0 0;
@@ -1222,7 +1221,6 @@ Version: 1.0
 }
 /* Mobile Media */
 /* Extra small devices (portrait phones, less than 576px) */
-
  @media (max-width: 575.98px) {
     .top-mobile-search {
         display: block;
