@@ -3,20 +3,57 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileSearchForm = document.querySelector('.mobile-search');
     const sidebarToggle = document.getElementById('sidebarToggle');
     const wrapper = document.getElementById('wrapper');
+    const videoCardsContainer = document.querySelector('.video-cards-container');
+    const loadingContainer = document.querySelector('.loading-container');
     const videoCards = document.querySelectorAll('.video-card');
 
+    let debounceTimer;
+
+    function showLoading() {
+        if (loadingContainer) {
+            loadingContainer.innerHTML = '<div class="loading-spinner">Loading...</div>';
+        }
+        if (videoCardsContainer) {
+            videoCardsContainer.style.display = 'none';
+        }
+    }
+
+    function hideLoading() {
+        if (loadingContainer) {
+            loadingContainer.innerHTML = '';
+        }
+        if (videoCardsContainer) {
+            videoCardsContainer.style.display = 'block';
+        }
+    }
+
     function filterVideos(searchTerm) {
-        videoCards.forEach(card => {
-            const titleElement = card.querySelector('.video-title a');
-            if (titleElement) {
-                const title = titleElement.textContent.toLowerCase();
-                if (title.includes(searchTerm.toLowerCase())) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            }
+        showLoading();
+
+        requestAnimationFrame(() => { // Use requestAnimationFrame for smoother updates
+            setTimeout(() => { // Simulate fetching delay (remove in real application)
+                videoCards.forEach(card => {
+                    const titleElement = card.querySelector('.video-title a');
+                    if (titleElement) {
+                        const title = titleElement.textContent.toLowerCase();
+                        if (title.includes(searchTerm.toLowerCase())) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+                hideLoading();
+            }, 100); // reduced to 100ms
         });
+    }
+
+    // Debounced filter function
+    function debouncedFilter(searchTerm) {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            filterVideos(searchTerm);
+        }, 200); // Adjust debounce delay as needed
     }
 
     // Desktop search functionality
@@ -32,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         searchForm.querySelector('input[type="text"]').addEventListener('input', function() {
             const searchTerm = this.value.trim();
-            filterVideos(searchTerm);
+            debouncedFilter(searchTerm);
         });
     }
 
@@ -49,18 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         mobileSearchForm.querySelector('input[type="text"]').addEventListener('input', function() {
             const searchTerm = this.value.trim();
-            filterVideos(searchTerm);
+            debouncedFilter(searchTerm);
         });
-    }
-
-
-    // Function to toggle mobile search
-    function toggleMobileSearch() {
-        if (mobileSearchForm.style.display === 'block') {
-            mobileSearchForm.style.display = 'none';
-        } else {
-            mobileSearchForm.style.display = 'block';
-        }
     }
 
     // Function to handle sidebar toggle
@@ -81,10 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Mobile view: hide desktop search, show mobile search toggle
             if (searchForm) {
                 searchForm.style.display = 'none';
-            }
-
-            if (mobileSearchForm) {
-                mobileSearchForm.style.display = 'none'; // Initially hide mobile search
             }
 
             // Create or get the mobile search button
@@ -115,14 +138,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 searchForm.style.display = 'flex'; // or 'inline-flex' depending on your layout
             }
 
-            if (mobileSearchForm) {
-                mobileSearchForm.style.display = 'none';
-            }
-
             // Remove mobile search button if it exists
             const mobileSearchButton = document.querySelector('.mobile-search-button');
             if (mobileSearchButton) {
                 mobileSearchButton.remove();
+            }
+            if (mobileSearchForm) {
+                mobileSearchForm.style.display = 'none';
             }
         }
     }
