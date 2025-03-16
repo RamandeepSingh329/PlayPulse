@@ -1242,6 +1242,29 @@ Version: 1.0
      padding: 3px 4px;
 }
 /* Mobile Media */
+@media (max-width: 575.98px) {
+    .top-mobile-search {
+        display: block;
+    }
+    #wrapper #content-wrapper .container-fluid {
+        padding-bottom: 15px !important;
+        padding-left: 108px;
+        padding-right: 15px !important;
+        padding-top: 1rem !important;
+    }
+    .sidebar {
+        width: 90px !important; /* Minimal sidebar width */
+        overflow: hidden;
+    }
+    .sidebar .nav-item .nav-link {
+        padding: 8px 14px !important;
+    }
+    .sidebar-toggled #wrapper #content-wrapper .container-fluid {
+        padding-left: 15px;
+    }
+    /* ... other mobile styles ... */
+}
+
 /* Extra small devices (portrait phones, less than 576px) */
  @media (max-width: 575.98px) {
     .top-mobile-search {
