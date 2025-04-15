@@ -1,95 +1,141 @@
 /*
-* 	Owl Carousel Owl Demo Theme 
-*	v1.3.2
+* Owl Carousel Owl Demo Theme
+* v1.3.2 - Black & Grey Color Scheme
 */
 
-.owl-theme .owl-controls{
-	margin-top: 0px;
+.owl-theme .owl-controls {
+	margin-top: 20px;
 	text-align: center;
-}
-
-/* Styling Next and Prev buttons */
-
-.owl-theme .owl-controls .owl-buttons div{
-	background: grey none repeat scroll 0 0;
-    border-radius: 30px;
-    color: black;
-    display: inline-block;
-    font-size: 12px;
-    height: 30px;
-    line-height: 31px;
-    margin: 0 -15px;
-    opacity: 0.8;
-    text-align: center;
-    text-transform: uppercase;
-    width: 30px;
-}
-.owl-theme .owl-controls .owl-buttons div:hover{
-	background: #1c2224 none repeat scroll 0 0;
-    color: #ffffff;
-}
-
-.owl-prev {
-    left: 0;
-    position: absolute;
-    top: 37%;
-    transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
-}
-.owl-next {
-    position: absolute;
-    right: 0;
-    top: 37%;
-    transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
-}
-/* Clickable class fix problem with hover on touch devices */
-/* Use it for non-touch hover action */
-.owl-theme .owl-controls.clickable .owl-buttons div:hover{
-	filter: Alpha(Opacity=100);/*IE7 fix*/
+	padding: 15px 0;
+	border-radius: 8px;
+	background-color: rgba(30, 30, 30, 0.8); /* Dark grey controls background */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Styling Next and Prev Buttons */
+  .owl-theme .owl-controls .owl-buttons div {
+	background: linear-gradient(135deg, rgba(50, 50, 50, 0.9), rgba(30, 30, 30, 0.9)); /* Dark grey gradient */
+	border-radius: 10px;
+	color: #eee;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5em;
+	height: 40px;
+	width: 40px;
+	margin: 0 8px;
+	opacity: 0.9;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease-in-out;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	user-select: none;
+  }
+  
+  .owl-theme .owl-controls .owl-buttons div:hover {
+	background-color: var(--accent-color, #888); /* Light grey accent */
+	color: #fff;
 	opacity: 1;
-	text-decoration: none;
-}
-
-/* Styling Pagination*/
-
-.owl-theme .owl-controls .owl-page{
+	transform: scale(1.1);
+	box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+  }
+  
+  .owl-prev::before {
+	content: '\2190'; /* Left arrow */
+	font-family: sans-serif;
+	font-size: inherit;
+  }
+  
+  .owl-next::before {
+	content: '\2192'; /* Right arrow */
+	font-family: sans-serif;
+	font-size: inherit;
+  }
+  
+  /* Styling Pagination */
+  .owl-theme .owl-controls .owl-page {
 	display: inline-block;
-	zoom: 1;
-	*display: inline;/*IE7 life-saver */
-}
-.owl-theme .owl-controls .owl-page span{
+	margin: 0 4px;
+  }
+  
+  .owl-theme .owl-controls .owl-page span {
 	display: block;
-	width: 32px;
-	height: 3px;
-	margin: 5px 2px;
-	filter: Alpha(Opacity=50);/*IE7 fix*/
-	opacity: 0.5;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	background: #869791;
-}
-
-.owl-theme .owl-controls .owl-page.active span,
-.owl-theme .owl-controls.clickable .owl-page:hover span{
-	filter: Alpha(Opacity=100);/*IE7 fix*/
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: var(--pagination-inactive-color, #555); /* Medium grey inactive */
+	opacity: 0.8;
+	transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease-in-out;
+	transform: scale(0.9);
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+  }
+  
+  .owl-theme .owl-controls .owl-page.active span,
+  .owl-theme .owl-controls.clickable .owl-page:hover span {
+	background-color: var(--accent-color, #ddd); /* Light grey active/hover */
 	opacity: 1;
-}
-
-/* If PaginationNumbers is true */
-
-.owl-theme .owl-controls .owl-page span.owl-numbers{
+	transform: scale(1.1);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* If PaginationNumbers is true */
+  .owl-theme .owl-controls .owl-page span.owl-numbers {
 	height: auto;
 	width: auto;
-	color: #FFF;
-	padding: 2px 10px;
-	font-size: 12px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-}
-
-/* preloading images */
-.owl-item.loading{
+	color: #fff;
+	padding: 8px 16px;
+	font-size: 1rem;
+	border-radius: 20px;
+	background-color: rgba(70, 70, 70, 0.9);
+  }
+  
+  /* Preloading images */
+  .owl-item.loading {
 	min-height: 150px;
-	background: url() no-repeat center center
-}
+	background: url() no-repeat center center;
+  }
+  
+  /* --- Visual Enhancements - Black & Grey Theme --- */
+  
+  /* Subtle "Breathing" effect for active pagination dot */
+  .owl-theme .owl-controls .owl-page.active span {
+	animation: pulseActiveDotGrey 1.7s infinite alternate;
+  }
+  
+  @keyframes pulseActiveDotGrey {
+	0% {
+	  transform: scale(1);
+	  opacity: 1;
+	  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+	}
+	100% {
+	  transform: scale(1.15);
+	  opacity: 0.9;
+	  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+	}
+  }
+  
+  /* Subtle "Glow" effect on hover for pagination dots */
+  .owl-theme .owl-controls.clickable .owl-page:hover span {
+	box-shadow: 0 0 8px rgba(221, 221, 221, 0.6); /* Light grey glow */
+  }
+  
+  /* Subtle gradient on the controls background */
+  .owl-theme .owl-controls {
+	background: linear-gradient(to bottom, rgba(30, 30, 30, 0.7), rgba(50, 50, 50, 0.9));
+  }
+  
+  /* Consider using more visually distinct arrow icons (e.g., with a border or different shape) */
+  .owl-prev::before {
+	content: '\276E'; /* Heavy left-pointing angle bracket */
+	font-family: sans-serif;
+	font-size: 1.2em;
+	color: #ddd;
+  }
+  
+  .owl-next::before {
+	content: '\276F'; /* Heavy right-pointing angle bracket */
+	font-family: sans-serif;
+	font-size: 1.2em;
+	color: #ddd;
+  }
+  
