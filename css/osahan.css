@@ -173,7 +173,13 @@ Version: 1.0
     height: 30px;
     margin-right: 10px;
     transition: transform 0.3s ease-in-out;
-  }
+    display: block; /* Ensure it's a block-level element for consistent shadow rendering */
+    box-shadow:
+        1px 1px 1px rgba(0, 0, 0, 0.2),
+        2px 2px 1px rgba(0, 0, 0, 0.15),
+        3px 3px 1px rgba(0, 0, 0, 0.1),
+        4px 4px 1px rgba(0, 0, 0, 0.05);
+}
   
   .navbar-brand b {
     font-size: 1.2em;
