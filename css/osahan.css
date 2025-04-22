@@ -1026,45 +1026,57 @@ h6 {
      border-radius: 2px;
 }
 /* Category Slider */
- .category-item img {
-     background: #fff none repeat scroll 0 0;
-     border-radius: 50px;
-     box-shadow: 0 0 2px #ccc;
-     height: 60px;
-     margin: 1px 0 8px;
-     object-fit: scale-down;
-     transform: scale(1);
-     width: 60px;
-}
- .category-item:hover img {
-     transform: scale(1.09);
-     transition-duration: 0.4s;
-}
- .category-item {
-     background: grey none repeat scroll 0 0;
-     border-radius: 2px;
-     box-shadow: 0 0 6px black;
-     margin: 6px 2px;
-     padding: 24px 12px;
-     text-align: center;
-}
- .top-category .category-item {
-     padding: 20px 11px;
-}
- .category-item h6 {
-     font-size: 15px;
-     margin: 5px 0 3px;
-     overflow: hidden;
-     text-overflow: ellipsis;
-     white-space: nowrap;
-     text-shadow: black;
-}
- .category-item p {
-     font-size: 11px;
-     font-weight: 500;
-     margin: 0;
-     text-shadow: black;
-}
+.category-item img {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 50px;
+    box-shadow: 0 0 8px #ff6ec7; /* Neon pink glow */
+    height: 60px;
+    margin: 1px 0 8px;
+    object-fit: scale-down;
+    transform: scale(1);
+    width: 60px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for glow */
+  }
+  
+  .category-item:hover img {
+    transform: scale(1.09);
+    box-shadow: 0 0 15px #00ced1; /* Brighter teal glow on hover */
+    transition-duration: 0.4s;
+  }
+  
+  .category-item {
+    background: grey none repeat scroll 0 0; /* Default grey background */
+    border-radius: 2px;
+    box-shadow: 0 0 12px #8a2be2; /* Glowing violet shadow */
+    margin: 6px 2px;
+    padding: 24px 12px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out; /* Smooth shadow transition */
+  }
+  
+  .category-item:hover {
+    box-shadow: 0 0 20px #00ced1; /* Brighter teal shadow on hover */
+  }
+  
+  .top-category .category-item {
+    padding: 20px 11px;
+  }
+  
+  .category-item h6 {
+    font-size: 15px;
+    margin: 5px 0 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-shadow: black; /* Default black text shadow */
+  }
+  
+  .category-item p {
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+    text-shadow: black; /* Default black text shadow */
+  }
 /* Video Card */
 .video-block .mb-3 {
     margin-bottom: 30px !important;
@@ -1159,66 +1171,114 @@ h6 {
     --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
- .video-title a {
-     color: #000;
-     font-weight: 600;
-     text-decoration: none;
-     color: #000;
-     font-weight: 600;
-     text-decoration: none;
-     transition: color var(--transition-duration), text-shadow var(--transition-duration);
- 
-}
- .video-title {
-     margin-bottom: 5px;
-}
- .video-page {
-     font-size: 11px;
-}
- .video-view {
-     color: #acacac;
-     font-size: 10px;
-     font-weight: 500;
-     margin: 2px 0 0;
-}
- .video-card {
-     background:  none repeat scroll 0 0;
-     border-radius: 2px;
-     box-shadow: 0 0 11px black;
-     transition-duration: 0.4s;
-}
- .video-card-body {
-     padding: 12px;
-}
- .video-card-list .video-card-image {
-     float: left;
-     height: 77px;
-     margin: 0 12px 0 0;
-     width: 122px;
-}
- .video-card-list .video-card-body {
-     padding: 0;
-}
- .video-card-list {
-     background: transparent none repeat scroll 0 0;
-     box-shadow: black;
-     display: inline-block;
-     margin-bottom: 1rem;
-     width: 100%;
-}
- .video-card-list .video-card-body .video-title a {
-     font-size: 13px;
-}
- .video-card-list .video-card-body .video-title {
-     line-height: 17px;
-}
- .video-card-list .video-card-body .right-action {
-     opacity: 0;
-}
- .video-card-list:hover .video-card-body .right-action {
-     opacity: 2;
-}
-/* Channels Card */
+.video-title a {
+    color: #ff7f50; /* Neon Coral */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    text-shadow: 0 0 5px #ff6ec7; /* Subtle neon pink glow */
+  }
+  
+  .video-title a:hover {
+    color: #00ced1; /* Neon Teal on hover */
+    text-shadow: 0 0 10px #00ced1; /* Brighter glow on hover */
+  }
+  
+  .video-title {
+    margin-bottom: 5px;
+  }
+  
+  .video-page {
+    font-size: 11px;
+    color: #acacac; /* Keep grey */
+  }
+  
+  .video-view {
+    color: #acacac; /* Keep grey */
+    font-size: 10px;
+    font-weight: 500;
+    margin: 2px 0 0;
+  }
+  
+  .video-card {
+    background: linear-gradient(90deg, #ff6ec7, #8a2be2, #00ced1, #ff6ec7); /* Animated gradient */
+    background-size: 400% 100%;
+    border-radius: 2px;
+    box-shadow: 0 0 15px #ff6ec7; /* Glowing neon pink shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: gradientShift 10s linear infinite, subtlePulse 2s infinite alternate; /* Gradient animation and subtle pulse */
+  }
+  
+  .video-card:hover {
+    box-shadow: 0 0 25px #00ced1; /* Brighter teal glow on hover */
+    transform: scale(1.03); /* Slight scale up on hover */
+  }
+  
+  .video-card-body {
+    padding: 12px;
+    background-color: rgb(255, 255, 255); /* Slightly transparent dark background for text contrast */
+  }
+  
+  .video-card-list .video-card-image {
+    float: left;
+    height: 77px;
+    margin: 0 12px 0 0;
+    width: 122px;
+  }
+  
+  .video-card-list .video-card-body {
+    padding: 0;
+    background-color: transparent; /* Remove background for list items */
+  }
+  
+  .video-card-list {
+    background: transparent none repeat scroll 0 0;
+    box-shadow: none; /* Remove default box shadow for list */
+    display: inline-block;
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid #8a2be2; /* Subtle violet border for list items */
+    border-radius: 4px;
+  }
+  
+  .video-card-list:hover {
+    border-color: #ff6ec7; /* Neon pink border on hover for list */
+    box-shadow: 0 0 8px #ff6ec7; /* Subtle glow on hover for list */
+  }
+  
+  .video-card-list .video-card-body .video-title a {
+    font-size: 13px;
+    color: #ff7f50; /* Neon Coral for list title */
+    text-shadow: 0 0 3px #ff6ec7; /* Subtle glow for list title */
+  }
+  
+  .video-card-list .video-card-body .video-title a:hover {
+    color: #00ced1; /* Neon Teal on hover for list title */
+    text-shadow: 0 0 6px #00ced1; /* Brighter glow on hover for list title */
+  }
+  
+  .video-card-list .video-card-body .video-title {
+    line-height: 17px;
+  }
+  
+  .video-card-list .video-card-body .right-action {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .video-card-list:hover .video-card-body .right-action {
+    opacity: 1; /* Adjust opacity for better visibility */
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
+  @keyframes subtlePulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.02); }
+  }/* Channels Card */
 .channel-brand {
     display: inline-flex;
     align-items: center;
